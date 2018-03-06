@@ -54,6 +54,11 @@ typings/
 # Yarn Integrity file
 .yarn-integrity
 
+# Yarn files
+yarn.lock
+
 # dotenv environment variables file
 .env
 
+# IntelliJ IDEs files
+.idea
