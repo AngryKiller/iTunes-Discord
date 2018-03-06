@@ -1,5 +1,5 @@
 const client = require('discord-rich-presence')('420530637485637644');
-const iTunes = require('./itunes-applescript.js');
+const iTunes = require('itunes-bridge');
 
 
 var state = iTunes.getCurrentTrackName() + " - " + iTunes.getCurrentTrackArtist();
