@@ -1,6 +1,6 @@
 {
   "name": "itunes-discord-integration",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A macOS application to set the activity in your Discord profile to the currently played song on iTunes",
   "main": "index.js",
   "scripts": {
@@ -24,8 +24,8 @@
   "homepage": "https://github.com/AngryKiller/iTunes-Discord-integration#readme",
   "dependencies": {
     "discord-rich-presence": "0.0.6",
-    "itunes-bridge": "^0.1.0",
-    "run-applescript": "^3.1.0",
-    "sec-to-min": "^1.0.1"
+    "itunes-bridge": "^0.1.8",
+    "kofiloop": "^1.0.1",
+    "run-applescript": "^3.1.0"
   }
 }
