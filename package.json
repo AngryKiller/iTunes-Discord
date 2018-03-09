@@ -1,10 +1,12 @@
 {
   "name": "itunes-discord-integration",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A macOS application to set the activity in your Discord profile to the currently played song on iTunes",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "electron .",
+    "pack": "electron-builder -m --dir",
+    "dist": "electron-builder -m"
   },
   "repository": {
     "type": "git",
@@ -14,7 +16,8 @@
     "itunes",
     "macos",
     "discord",
-    "music"
+    "music",
+    "electron"
   ],
   "author": "AngryKiller",
   "license": "GPL-3.0",
@@ -24,8 +27,24 @@
   "homepage": "https://github.com/AngryKiller/iTunes-Discord-integration#readme",
   "dependencies": {
     "discord-rich-presence": "0.0.6",
+    "electron-photon": "^0.1.0",
+    "electron-settings": "^3.1.4",
+    "electron-updater": "^2.21.0",
     "itunes-bridge": "^0.1.8",
     "kofiloop": "^1.0.1",
-    "run-applescript": "^3.1.0"
+    "path": "^0.12.7",
+    "url": "^0.11.0"
+  },
+  "devDependencies": {
+    "electron": "1.8.3",
+    "electron-builder": "^20.3.1"
+  },
+  "build": {
+    "appId": "fr.angrykiller.itunes-discord",
+    "mac": {
+      "category": "public.app-category.utilities"
+    },
+    "productName": "iTunes-Discord",
+    "copyright": "Copyright © 2018 ${author}"
   }
 }

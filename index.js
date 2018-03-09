@@ -1,8 +1,17 @@
+if (process.platform !== 'darwin') { // iTunes-Discord is not compatible with Windows and Linux cause it uses iTunes-bridge (AppleScript) to communicate with iTunes.
+    console.log("You need macOS to run this application!");
+    process.exit();
+}
 const client = require('discord-rich-presence')('420530637485637644');
 const iTunes = require('itunes-bridge');
 const kofiloop = require('kofiloop');
+require('./interface');
+//require('./settings');
+
 
 console.log('iTunes-Discord started! Wait 15 seconds for the first RPC request to be sent...');
+
+// TODO Separate this code into functions in a separate file cause it looks really bad right now
 kofiloop.startLoop(function(){
     var playerState = iTunes.getPlayerState();
     if(playerState == 'playing') {
@@ -30,9 +39,7 @@ kofiloop.startLoop(function(){
         });
         console.log("iTunes is paused, informations sent: " + details + " " + state );
     }else if(playerState == 'stopped'){
-        client.updatePresence({});
+        client.disconnect;
         console.log("iTunes is not playing! do u kno da wae to close a Discord RPC connection? ");
     }
 }, 15000);
-
-// wen eta gui? SON.

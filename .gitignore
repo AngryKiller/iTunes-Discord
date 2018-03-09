@@ -62,3 +62,7 @@ yarn.lock
 
 # IntelliJ IDEs files
 .idea
+
+# npm lock file
+package-lock.json
+package-lock.json
