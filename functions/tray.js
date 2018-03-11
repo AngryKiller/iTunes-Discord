@@ -6,8 +6,38 @@ const iTunes = require('itunes-bridge');
 const kofiloop = require('kofiloop');
 const windows = require('./windows');
 // The tray that will be shown on launch in the status bar
+
+
+function getPlayerInfos(){
+    return {state: iTunes.getPlayerState(), song: iTunes.getCurrentTrackName(), artist: iTunes.getCurrentTrackArtist(), album: iTunes.getCurrentTrackAlbum()};
+}
+function buildMusicLabel(){
+    var playerState = iTunes.getPlayerState();
+    switch(playerState){
+        case "playing": {
+            var player = getPlayerInfos();
+            var musicLabel = {label: 'Playing: ' + player.song + " by " + player.artist, type: 'normal'};
+            return musicLabel;
+            break;
+        }
+        case "paused": {
+            var player = getPlayerInfos();
+            var musicLabel = {label: 'Paused: ' + player.song + " by " + player.artist, type: 'normal'};
+            return musicLabel;
+            break;
+        }
+        case "not running":
+        case "stopped":{
+            var musicLabel = {label: 'iTunes is not playing...'};
+            return musicLabel;
+            break;
+        }
+    }
+
+}
+
 const contextMenu = Menu.buildFromTemplate([
-    {label: CapitalizeString(iTunes.getPlayerState()) + ': ' + iTunes.getCurrentTrackName() + " by " + iTunes.getCurrentTrackArtist(), type: 'normal'},
+    buildMusicLabel(),
     {type: 'separator'},
     {label: 'Preferences', type: 'normal', click() { windows.showPreferences() }},
     {type: 'separator'},
@@ -27,7 +57,7 @@ exports.updateTray = function() {
     // To update the tray data, we launch a kofiloop that will get the data from iTunes-bridge and then set the tray context menu to the one containing new data.
     kofiloop.startLoop(function(){
         const contextMenu = Menu.buildFromTemplate([
-            {label: CapitalizeString(iTunes.getPlayerState()) + ': ' + iTunes.getCurrentTrackName() + " by " + iTunes.getCurrentTrackArtist(), type: 'normal'},
+            buildMusicLabel(),
             {type: 'separator'},
             {label: 'Preferences', type: 'normal'},
             {type: 'separator'},
@@ -36,8 +66,4 @@ exports.updateTray = function() {
         tray.setContextMenu(contextMenu);
         console.log("Tray information updated!")
     }, 5000);
-}
-
-function CapitalizeString(word) {
-    return word.charAt(0).toUpperCase() + word.slice(1); // Function needed to add a capital letter to the player state so it looks better.
 };
