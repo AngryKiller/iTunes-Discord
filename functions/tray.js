@@ -12,16 +12,14 @@ function getPlayerInfos(){
     return iTunes.getCurrentTrack();
 }
 function buildMusicLabel(){
-    var playerState = iTunes.getPlayerState();
-    switch(playerState){
+    var player = getPlayerInfos();
+    switch(player.playerState){
         case "playing": {
-            var player = getPlayerInfos();
             var musicLabel = {label: '▶ Playing: ' + player.name + " by " + player.artist, type: 'normal'};
             return musicLabel;
             break;
         }
         case "paused": {
-            var player = getPlayerInfos();
             var musicLabel = {label: '❙❙ Paused: ' + player.name + " by " + player.artist, type: 'normal'};
             return musicLabel;
             break;
