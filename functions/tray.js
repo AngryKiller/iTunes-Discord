@@ -9,20 +9,20 @@ const windows = require('./windows');
 
 
 function getPlayerInfos(){
-    return {state: iTunes.getPlayerState(), song: iTunes.getCurrentTrackName(), artist: iTunes.getCurrentTrackArtist(), album: iTunes.getCurrentTrackAlbum()};
+    return iTunes.getCurrentTrack();
 }
 function buildMusicLabel(){
     var playerState = iTunes.getPlayerState();
     switch(playerState){
         case "playing": {
             var player = getPlayerInfos();
-            var musicLabel = {label: '▶ Playing: ' + player.song + " by " + player.artist, type: 'normal'};
+            var musicLabel = {label: '▶ Playing: ' + player.name + " by " + player.artist, type: 'normal'};
             return musicLabel;
             break;
         }
         case "paused": {
             var player = getPlayerInfos();
-            var musicLabel = {label: '❙❙ Paused: ' + player.song + " by " + player.artist, type: 'normal'};
+            var musicLabel = {label: '❙❙ Paused: ' + player.name + " by " + player.artist, type: 'normal'};
             return musicLabel;
             break;
         }
