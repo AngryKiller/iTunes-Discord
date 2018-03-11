@@ -12,14 +12,14 @@ function setRpcPlayingStatus(){
     switch (player.state) {
         case "playing": {
             var presence = {details: "Playing "+player.song+" by "+player.artist, state: "💿 "+player.album, largeImageKey: 'itunes_large', smallImageKey: 'playing', instance: false};
-            console.log("iTunes is playing mamène");
             client.updatePresence(presence);
+            console.log("Sent player informations to rpc!");
             break;
         }
         case "paused": {
             var presence = {details: "Paused: "+player.song+" by "+player.artist, state: "💿 "+player.album, largeImageKey: 'itunes_large', smallImageKey: 'paused', instance: false};
-            console.log("iTunes is paused mamène");
             client.updatePresence(presence);
+            console.log("Sent player informations to rpc!");
             break;
         }
         case "stopped":

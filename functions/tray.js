@@ -16,19 +16,19 @@ function buildMusicLabel(){
     switch(playerState){
         case "playing": {
             var player = getPlayerInfos();
-            var musicLabel = {label: 'Playing: ' + player.song + " by " + player.artist, type: 'normal'};
+            var musicLabel = {label: '▶ Playing: ' + player.song + " by " + player.artist, type: 'normal'};
             return musicLabel;
             break;
         }
         case "paused": {
             var player = getPlayerInfos();
-            var musicLabel = {label: 'Paused: ' + player.song + " by " + player.artist, type: 'normal'};
+            var musicLabel = {label: '❙❙ Paused: ' + player.song + " by " + player.artist, type: 'normal'};
             return musicLabel;
             break;
         }
         case "not running":
         case "stopped":{
-            var musicLabel = {label: 'iTunes is not playing...'};
+            var musicLabel = {label: '■ iTunes is not playing...'};
             return musicLabel;
             break;
         }
