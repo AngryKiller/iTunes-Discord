@@ -1,7 +1,7 @@
 const client = require('discord-rich-presence')('420530637485637644');
 const iTunes = require('itunes-bridge');
 const kofiloop = require('kofiloop');
-
+exports = module.exports = {};
 
 function getPlayerInfos(){
     return {state: iTunes.getPlayerState(), song: iTunes.getCurrentTrackName(), artist: iTunes.getCurrentTrackArtist(), album: iTunes.getCurrentTrackAlbum()};
@@ -32,3 +32,7 @@ function setRpcPlayingStatus(){
 kofiloop.startLoop(function(){
     setRpcPlayingStatus();
 }, 15000);
+
+exports.disconnectRpc = function() {
+    client.disconnect();
+};

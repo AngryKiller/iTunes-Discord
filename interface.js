@@ -1,7 +1,7 @@
 const {app} = require('electron');
 //app.dock.hide();
 const tray = require('./functions/tray');
-
+const rpc = require('./functions/rpc');
 
 function addTray () {
     tray.createTray();
@@ -11,4 +11,7 @@ function addTray () {
 
 app.on('ready', function() {
     addTray();
-})
+});
+app.on('quit', function() {
+    rpc.disconnectRpc();
+});
