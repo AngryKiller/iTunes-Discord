@@ -47,7 +47,7 @@ var exports = module.exports = {};
 exports.createTray = function() {
     tray = new Tray(nImage);
     tray.setContextMenu(contextMenu);
-    tray.setToolTip('iTunes-Discord');
+    tray.setToolTip('iTunes⇄Discord');
     return tray;
 };
 
