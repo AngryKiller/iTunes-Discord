@@ -12,6 +12,11 @@ function addTray () {
 app.on('ready', function() {
     addTray();
 });
+
+app.on('window-all-closed', function () {
+    //
+});
+
 app.on('quit', function() {
     rpc.disconnectRpc();
 });

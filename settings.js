@@ -1,17 +1,17 @@
-const {ipcMain} = require('electron');
-const settings = require('electron-settings');
-const cmd = process.argv[1];
-//this isn't working yet
-ipcMain.on('log-error', () => {
-    console.log('IPC message received!');
-});
-settings.set('name', {
-    first: 'Cosmo',
-    last: 'Kramer'
-});
-if (cmd == '--squirrel-firstrun') {
-    console.log("premier lancement mamène");
-}
+const {ipcMain, app} = require('electron');
+const Store = require('electron-store');
+const defaultConfig = {"launch-at-login": true};
+const store = new Store({defaults: defaultConfig});
 
-settings.get('name.first');
+
+ipcMain.on('launch-at-login', (event, arg) => {
+    console.log('IPC message received! editing launch at login config.');
+    store.set('launch-at-login', arg);
+    app.setLoginItemSettings({'openAtLogin': arg});
+});
+ipcMain.on('getvalue-launch-at-login', (event, arg) => {
+    event.sender.send('value-launch-at-login', store.get('launch-at-login'));
+});
+
+
 console.log("settings.js loaded");

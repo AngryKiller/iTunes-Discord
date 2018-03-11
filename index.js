@@ -5,7 +5,7 @@ if (process.platform !== 'darwin') { // iTunes-Discord is not compatible with Wi
 
 require('./interface');
 require('./functions/rpc');
-//require('./settings');
+require('./settings');
 
 
 console.log('iTunes-Discord started! Wait 15 seconds for the first RPC request to be sent...');
