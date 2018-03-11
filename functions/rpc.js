@@ -8,16 +8,16 @@ function getPlayerInfos(){
 }
 
 function setRpcPlayingStatus(){
-    var player = getPlayerInfos();
-    switch (player.playerState) {
+    var currentTrack = getPlayerInfos();
+    switch (currentTrack.playerState) {
         case "playing": {
-            var presence = {details: "▶ Playing "+player.name+" by "+player.artist, state: "💿 "+player.album, largeImageKey: 'itunes_large', smallImageKey: 'playing', instance: false};
+            var presence = {details: "▶ Playing "+currentTrack.name+" by "+currentTrack.artist, state: "💿 "+currentTrack.album, largeImageKey: 'itunes_large', smallImageKey: 'playing', instance: false};
             client.updatePresence(presence);
             console.log("Sent player informations to rpc!");
             break;
         }
         case "paused": {
-            var presence = {details: "❙❙ Paused: "+player.name+" by "+player.artist, state: "💿 "+player.album, largeImageKey: 'itunes_large', smallImageKey: 'paused', instance: false};
+            var presence = {details: "❙❙ Paused: "+currentTrack.name+" by "+currentTrack.artist, state: "💿 "+currentTrack.album, largeImageKey: 'itunes_large', smallImageKey: 'paused', instance: false};
             client.updatePresence(presence);
             console.log("Sent player informations to rpc!");
             break;

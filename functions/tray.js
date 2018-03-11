@@ -12,15 +12,15 @@ function getPlayerInfos(){
     return iTunes.getCurrentTrack();
 }
 function buildMusicLabel(){
-    var player = getPlayerInfos();
-    switch(player.playerState){
+    var currentTrack = getPlayerInfos();
+    switch(currentTrack.playerState){
         case "playing": {
-            var musicLabel = {label: '▶ Playing: ' + player.name + " by " + player.artist, type: 'normal'};
+            var musicLabel = {label: '▶ Playing: ' + currentTrack.name + " by " + currentTrack.artist, type: 'normal'};
             return musicLabel;
             break;
         }
         case "paused": {
-            var musicLabel = {label: '❙❙ Paused: ' + player.name + " by " + player.artist, type: 'normal'};
+            var musicLabel = {label: '❙❙ Paused: ' + currentTrack.name + " by " + currentTrack.artist, type: 'normal'};
             return musicLabel;
             break;
         }
