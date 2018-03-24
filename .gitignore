@@ -66,3 +66,4 @@ yarn.lock
 # npm lock file
 package-lock.json
 
+dist
