@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Preferences</title>
+    <link rel="stylesheet" href="../assets/css/itunes-discord.css">
+    <script>
+        require('../assets/js/app.js');
+    </script>
+    <script>
+        const ipc = require('electron').ipcRenderer;
+        ipc.send('getvalue-launch-at-login');
+        ipc.on('value-launch-at-login', (event, arg) => {
+            document.getElementById("launchAtLogin").checked = arg;
+        })
+        function confLaunchAtLogin(id){
+            if(document.getElementById(id).checked) {
+                ipc.send('launch-at-login', true);
+            }else{
+                ipc.send('launch-at-login', false);
+            }
+        }
+    </script>
+</head>
+<body>
+<<ph-window>
+    <!--Window content here-->
+    <window-content class="theme-gray">
+
+        <div class="main-border">
+            <form id="settings">
+                    <div class="checkbox">
+                        <label for="launchAtLogin">Launch at login</label>
+                            <input type="checkbox" onchange="confLaunchAtLogin('launchAtLogin')" id="launchAtLogin">
+
+                    </div>
+
+            </form>
+        </div>
+
+    </window-content>
+
+</ph-window>
+
+</body>
+</html>
