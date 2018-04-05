@@ -5,8 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "electron .",
-    "pack": "electron-builder -m --dir",
-    "dist": "electron-builder -m"
+    "pack": "electron-builder -m -w --dir",
+    "dist": "electron-builder -m -w"
   },
   "repository": {
     "type": "git",
