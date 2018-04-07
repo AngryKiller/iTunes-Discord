@@ -1,6 +1,6 @@
 {
   "name": "itunes-discord",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "An application to set the activity in your Discord profile to the currently played song on iTunes",
   "main": "app.js",
   "scripts": {
