@@ -1,6 +1,6 @@
 const {ipcMain, app} = require('electron');
 const Store = require('electron-store');
-const defaultConfig = {"launch-at-login": true};
+const defaultConfig = {"launch-at-login": true, "language": "english"};
 const store = new Store({defaults: defaultConfig});
 
 
