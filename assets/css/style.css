@@ -1,0 +1,9 @@
+body{
+    padding-top: 50px;
+}
+#preferences{
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 40px -12px gray;
+}

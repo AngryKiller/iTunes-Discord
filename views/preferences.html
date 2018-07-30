@@ -3,9 +3,10 @@
 <head>
     <meta charset="utf-8">
     <title>Preferences</title>
-    <link rel="stylesheet" href="../assets/css/itunes-discord.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <script>
-        require('../assets/js/app.js');
+        require('../assets/js/bootstrap.min.js');
     </script>
     <script>
         const ipc = require('electron').ipcRenderer;
@@ -13,34 +14,44 @@
         ipc.on('value-launch-at-login', (event, arg) => {
             document.getElementById("launchAtLogin").checked = arg;
         })
-        function confLaunchAtLogin(id){
+        function checkbox(parameter, id){
             if(document.getElementById(id).checked) {
-                ipc.send('launch-at-login', true);
+                ipc.send(parameter, true);
             }else{
-                ipc.send('launch-at-login', false);
+                ipc.send(parameter, false);
             }
         }
     </script>
 </head>
 <body>
-<<ph-window>
-    <!--Window content here-->
-    <window-content class="theme-gray">
-
-        <div class="main-border">
-            <form id="settings">
+<div class="container">
+    <div id="preferences">
+    <h1 class="title">Preferences</h1>
+           <!-- <form id="settings">
                     <div class="checkbox">
                         <label for="launchAtLogin">Launch at login</label>
                             <input type="checkbox" onchange="confLaunchAtLogin('launchAtLogin')" id="launchAtLogin">
 
                     </div>
 
-            </form>
+            </form>!-->
+        <form>
+            <div class="form-group">
+                <label for="language">Language</label>
+                <select class="form-control" id="language">
+                    <option>English</option>
+                    <option>Français</option>
+                    <option>Español</option>
+                </select>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" onchange="checkbox('launch-at-login', 'launchAtLogin')" id="launchAtLogin">
+                <label class="form-check-label" for="launchAtLogin">Launch at login?</label>
+            </div>
+        </form>
         </div>
-
-    </window-content>
-
-</ph-window>
+</div>
+</div>
 
 </body>
 </html>
