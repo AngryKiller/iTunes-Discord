@@ -10,7 +10,7 @@ let preferencesWindow;
 ejse.data('username', 'Some Guy');
 
 exports.showPreferences = function() {
-        preferencesWindow = new BrowserWindow({width: 520, height: 450, minWidth: 520, minHeight: 450, fullscreenable: false, titleBarStyle: "hiddenInset", vibrancy: "light", transparent: true});
+        preferencesWindow = new BrowserWindow({width: 520, height: 450, minWidth: 520, minHeight: 450, fullscreenable: false, titleBarStyle: "hiddenInset", vibrancy: "medium-light", transparent: true});
         preferencesWindow.loadURL(url.format({
             pathname: path.join(views, 'preferences.ejs'),
             protocol: 'file:',
