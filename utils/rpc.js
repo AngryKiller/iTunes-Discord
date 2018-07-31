@@ -19,6 +19,7 @@ exports.setStatus = function(currentTrack){
         }
         case "stopped": {
             client.disconnect();
+            console.log("Disconnected from rpc!");
             break;
         }
     }
