@@ -16,5 +16,6 @@ exports.showPreferences = function() {
             protocol: 'file:',
             slashes: true
         }));
+        preferencesWindow.setMenu(null);
     //preferencesWindow.webContents.openDevTools();
 };
