@@ -17,12 +17,16 @@ You need [electron-builder](https://github.com/electron-userland/electron-builde
        $ npm i electron-builder -G
        $ npm run dist
        
+       
+# Contribute!
+
+You can easily contribute by translating the application into more languages! Just copy the english.json file, rename it to the language you're translating to and... translate!       
 # Built with
 
 [iTunes-bridge](https://github.com/AngryKiller/iTunes-bridge) by... me ¯\_(ツ)_/¯
 
 [Electron](https://github.com/electron/electron)
 
-[Photon](https://github.com/MauriceConrad/Photon) by [MauriceConrad](https://github.com/MauriceConrad/)
+[Bootstrap](https://getbootstrap.com)
 
 [discord-rich-presence](https://github.com/devsnek/discord-rich-presence) by [devsnek](https://github.com/devsnek/discord-rich-presence)
