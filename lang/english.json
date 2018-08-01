@@ -1,6 +1,6 @@
 {
   "preferences": "Preferences",
-  "listening-to": "Listening to",
+  "listeningto": "Listening to",
   "language": "Language",
   "langAlert": "Changing language requires to restart iTunes⇄Discord",
   "relaunch": "Relaunch",
@@ -8,5 +8,7 @@
   "by": "by",
   "about": "About",
   "madeby": "Made by",
+  "itunesnotplaying": "iTunes is not playing...",
+  "quit": "Quit",
   "launchatlogin": "Launch at login"
 }

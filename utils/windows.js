@@ -3,6 +3,8 @@ const path = require('path');
 const ejse = require('ejs-electron');
 const lang = require('./lang');
 const url = require('url');
+const Store = require('electron-store');
+const store = new Store();
 var exports = module.exports = {};
 const views = path.join(__dirname, '../views');
 
@@ -14,6 +16,8 @@ lang.list(function(languages){
 app.commandLine.appendSwitch('disable-pinch');
 ejse.data('lang', lang.get);
 ejse.data('version', app.getVersion());
+ejse.data('currentLang', store.get('language'));
+ejse.data('launchAtLogin', store.get('launch-at-login'));
 console.log(app.getVersion());
 
 exports.showPreferences = function() {

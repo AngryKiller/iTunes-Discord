@@ -1,6 +1,6 @@
 {
   "preferences": "Paramètres",
-  "listening-to": "Écoute",
+  "listeningto": "Écoute",
   "language": "Langue",
   "langAlert": "Vous devez relancer iTunes⇄Discord pour appliquer le changement de langue",
   "relaunch": "Relancer",
@@ -8,5 +8,7 @@
   "by": "de",
   "about": "À propos",
   "madeby": "Développé par",
+  "itunesnotplaying": "iTunes est à l'arrêt...",
+  "quit": "Quitter",
   "launchatlogin": "Ouvrir à l'ouverture de session"
 }
