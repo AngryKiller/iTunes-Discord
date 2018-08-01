@@ -9,8 +9,15 @@ ipcMain.on('launch-at-login', (event, arg) => {
     store.set('launch-at-login', arg);
     app.setLoginItemSettings({'openAtLogin': arg});
 });
+ipcMain.on('language', (event, arg) => {
+    console.log('IPC message received! editing language.');
+    store.set('language', arg);
+});
 ipcMain.on('getvalue-launch-at-login', (event, arg) => {
     event.sender.send('value-launch-at-login', store.get('launch-at-login'));
+});
+ipcMain.on('getvalue-language', (event, arg) => {
+    event.sender.send('value-language', store.get('language'));
 });
 
 

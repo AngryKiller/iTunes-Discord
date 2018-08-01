@@ -6,7 +6,7 @@ exports.setStatus = function(currentTrack){
     switch (currentTrack.playerState) {
         case "playing": {
             const time = new Date();
-            const presence = {details: "▶ Playing "+currentTrack.name+" by "+currentTrack.artist, state: "💿 "+currentTrack.album, largeImageKey: 'itunes_large', smallImageKey: 'playing',startTimestamp: time,  endTimestamp: new Date(time.getTime() + (currentTrack.remainingTime * 1000)), instance: false};
+            const presence = {details: "▶ Listening to "+currentTrack.name+" by "+currentTrack.artist, state: "💿 "+currentTrack.album, largeImageKey: 'itunes_large', smallImageKey: 'playing',startTimestamp: time,  endTimestamp: new Date(time.getTime() + (currentTrack.remainingTime * 1000)), instance: false};
             client.updatePresence(presence);
             console.log("Sent player informations to rpc!");
             break;

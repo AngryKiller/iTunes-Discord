@@ -11,8 +11,12 @@
     <script>
         const ipc = require('electron').ipcRenderer;
         ipc.send('getvalue-launch-at-login');
+        ipc.send('getvalue-language');
         ipc.on('value-launch-at-login', (event, arg) => {
             document.getElementById("launchAtLogin").checked = arg;
+        })
+        ipc.on('value-language', (event, arg) => {
+            document.getElementById('language').value = arg;
         })
         function checkbox(parameter, id){
             if(document.getElementById(id).checked) {
@@ -21,24 +25,41 @@
                 ipc.send(parameter, false);
             }
         }
+        function changeLanguage(){
+            var select = document.getElementById("language");
+            var value = select.options[select.selectedIndex].value;
+            var alert = document.getElementById("lang-alert");
+            ipc.send("language", value);
+            alert.style.display = "block";
+        }
     </script>
 </head>
 <body>
 <div class="container">
+    <div class="alert alert-danger" id="lang-alert"><%= lang.langAlert %> <br><button class="btn btn-primary btm-sm"><%= lang.relaunch %></button></div>
     <div id="preferences">
-    <h1 class="title">Preferences</h1>
+    <h1 class="title"><%= lang.preferences %></h1>
         <form>
             <div class="form-group">
-                <label for="language">Language</label>
-                <select class="form-control" id="language">
-                    <option>English</option>
-                    <option>Français</option>
-                    <option>Español</option>
+                <label for="language"><%= lang.language %></label>
+                <select class="form-control" id="language" onchange="changeLanguage()">
+                    <%
+                    function capitalize(str=''){
+                        return str.trim().split('')
+                                .map((char,i) => i === 0 ? char.toUpperCase() : char )
+                                .reduce((final,char)=> final += char, '' )
+                    }
+
+                    langList.forEach(function(language){
+                    language = language.replace('.json', '');
+                    %>
+                    <option value="<%= language %>"><%= capitalize(language) %></option>
+                    <% }) %>
                 </select>
             </div>
             <div class="form-group form-check">
                 <input type="checkbox" class="form-check-input" onchange="checkbox('launch-at-login', 'launchAtLogin')" id="launchAtLogin">
-                <label class="form-check-label" for="launchAtLogin">Launch at login?</label>
+                <label class="form-check-label" for="launchAtLogin"><%= lang.launchatlogin %>?</label>
             </div>
         </form>
         </div>
