@@ -2,7 +2,7 @@ const {ipcMain, app} = require('electron');
 const Store = require('electron-store');
 const defaultConfig = {"launch-at-login": true, "language": "english"};
 const store = new Store({defaults: defaultConfig});
-
+const open = require('open');
 
 ipcMain.on('launch-at-login', (event, arg) => {
     console.log('IPC message received! editing launch at login config.');
@@ -18,6 +18,9 @@ ipcMain.on('getvalue-launch-at-login', (event, arg) => {
 });
 ipcMain.on('getvalue-language', (event, arg) => {
     event.sender.send('value-language', store.get('language'));
+});
+ipcMain.on('link', (event, arg) => {
+    open(arg);
 });
 
 

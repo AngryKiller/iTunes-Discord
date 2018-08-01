@@ -5,10 +5,12 @@
     <title>Preferences</title>
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <script>
         require('../assets/js/bootstrap.min.js');
     </script>
     <script>
+        require('web-frame').setZoomLevelLimits(1, 1);
         const ipc = require('electron').ipcRenderer;
         ipc.send('getvalue-launch-at-login');
         ipc.send('getvalue-language');
@@ -32,12 +34,15 @@
             ipc.send("language", value);
             alert.style.display = "block";
         }
+        function openLink(link){
+            ipc.send("link", link);
+        }
     </script>
 </head>
 <body>
 <div class="container">
     <div class="alert alert-danger" id="lang-alert"><%= lang.langAlert %> <br><button class="btn btn-primary btm-sm"><%= lang.relaunch %></button></div>
-    <div id="preferences">
+    <div class="section" id="preferences">
     <h1 class="title"><%= lang.preferences %></h1>
         <form>
             <div class="form-group">
@@ -63,6 +68,12 @@
             </div>
         </form>
         </div>
+    <div class="section" id="about">
+        <h1 class="title"><%= lang.about %></h1>
+        <img src="../assets/img/logo.png" width=200>
+        <h3>iTunes⇄Discord <span class="badge badge-success"><%= version %></span></h3>
+        <small><%= lang.madeby %> <a href="#" onclick="openLink('https://github.com/AngryKiller')">AngryKiller</a></small>
+    </div>
 </div>
 </div>
 

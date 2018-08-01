@@ -2,12 +2,33 @@ body{
     padding-top: 50px;
     background: transparent;
 }
-#preferences{
+.section{
     background: #f4f4f4;
     padding: 20px;
     border-radius: 20px;
     box-shadow: 2px 2px 40px -12px gray;
+    margin-bottom: 20px;
 }
 #lang-alert{
     display: none;
+}
+#about{
+
+}
+#about>img{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+#about>h3{
+    text-align: center;
+    font-weight: 200;
+}
+#about>small{
+    text-align: center;
+    display: block;
+    font-weight: 200;
+}
+#about>h3>span{
+    font-weight: 200;
 }
