@@ -1,17 +1,15 @@
 exports = module.exports = {};
-const jsonfile = require('jsonfile');
+require ('hazardous');
+const path = require ('path');
 const Store = require('electron-store');
 const store = new Store();
-const path = require('path');
 const lang = store.get('language');
 const fs = require('fs');
-const langFile = "./lang/"+lang+".json";
 
-console.log(langFile);
-exports.get = jsonfile.readFileSync(langFile);
-
+exports.get = require('../lang/'+lang);
+const langPath = path.join(__dirname, '../lang');
 exports.list = function(callback){
-    fs.readdir("./lang/", function(err, items) {
+    fs.readdir(langPath, function(err, items) {
         callback(items);
     });
 };

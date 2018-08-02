@@ -31,8 +31,8 @@
     "ejs-electron": "^2.0.3",
     "electron-store": "^2.0.0",
     "electron-updater": "^3.1.1",
+    "hazardous": "^0.3.0",
     "itunes-bridge": "github:AngryKiller/itunes-bridge",
-    "jsonfile": "^4.0.0",
     "open": "0.0.5",
     "path": "^0.12.7",
     "url": "^0.11.0"
@@ -50,7 +50,8 @@
     "copyright": "Copyright © 2018 AngryKiller",
     "asarUnpack": [
       "node_modules/itunes-bridge/wscript",
-      "node_modules/itunes-bridge/jxa"
+      "node_modules/itunes-bridge/jxa",
+      "lang/"
     ]
   }
 }
