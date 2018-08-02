@@ -5,26 +5,6 @@
     <title><%= lang.preferences %></title>
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
-    <script>
-        const ipc = require('electron').ipcRenderer;
-        function checkbox(parameter, id){
-            if(document.getElementById(id).checked) {
-                ipc.send(parameter, true);
-            }else{
-                ipc.send(parameter, false);
-            }
-        }
-        function changeLanguage(){
-            var select = document.getElementById("language");
-            var value = select.options[select.selectedIndex].value;
-            var alert = document.getElementById("lang-alert");
-            ipc.send("language", value);
-            alert.style.display = "block";
-        }
-        function openLink(link){
-            ipc.send("link", link);
-        }
-    </script>
 </head>
 <body>
 <div class="container">
@@ -62,6 +42,8 @@
         <small><%= lang.madeby %> <a href="#" onclick="openLink('https://github.com/AngryKiller')">AngryKiller</a></small>
     </div>
 </div>
+
+<script src="../assets/js/app.js"></script>
 <script>
     document.getElementById('launchAtLogin').checked = <%= launchAtLogin %>;
     var currentLang = "<%= currentLang %>";
