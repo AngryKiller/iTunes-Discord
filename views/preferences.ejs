@@ -10,16 +10,7 @@
         require('../assets/js/bootstrap.min.js');
     </script>
     <script>
-        require('web-frame').setZoomLevelLimits(1, 1);
         const ipc = require('electron').ipcRenderer;
-        ipc.send('getvalue-launch-at-login');
-        ipc.send('getvalue-language');
-        ipc.on('value-launch-at-login', (event, arg) => {
-            document.getElementById("launchAtLogin").checked = arg;
-        })
-        ipc.on('value-language', (event, arg) => {
-            document.getElementById('language').value = arg;
-        })
         function checkbox(parameter, id){
             if(document.getElementById(id).checked) {
                 ipc.send(parameter, true);
@@ -75,7 +66,12 @@
         <small><%= lang.madeby %> <a href="#" onclick="openLink('https://github.com/AngryKiller')">AngryKiller</a></small>
     </div>
 </div>
-</div>
+<script>
+    document.getElementById('launchAtLogin').checked = <%= launchAtLogin %>;
+    var currentLang = "<%= currentLang %>";
+    document.getElementById('language').value = currentLang;
+
+</script>
 
 </body>
 </html>

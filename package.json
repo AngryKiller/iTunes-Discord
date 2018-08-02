@@ -30,7 +30,7 @@
     "discord-rich-presence": "0.0.7",
     "ejs-electron": "^2.0.3",
     "electron-store": "^2.0.0",
-    "electron-updater": "^3.0.3",
+    "electron-updater": "^3.1.1",
     "itunes-bridge": "github:AngryKiller/itunes-bridge",
     "jsonfile": "^4.0.0",
     "open": "0.0.5",

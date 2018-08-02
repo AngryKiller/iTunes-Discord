@@ -12,7 +12,7 @@ iTunesEmitter.on('playing', function(type, currentTrack){
         rpc.setStatus(currentTrack);
         // Or if it is a new track
     }else if(type === 'new_track'){
-        console.log(currentTrack.name+" is now playing!")
+        console.log(currentTrack.name+" is now playing!");
         tray.update(currentTrack);
         rpc.setStatus(currentTrack);
     }
