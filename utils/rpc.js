@@ -13,8 +13,6 @@ switch(appTitle){
 const client = require('discord-rich-presence')(clientId);
 const lang = require('./lang');
 exports = module.exports = {};
-const Store = require('electron-store');
-const store = new Store();
 
 exports.setStatus = function(currentTrack){
     switch (currentTrack.playerState) {
