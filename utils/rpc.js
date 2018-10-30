@@ -1,5 +1,17 @@
-const client = require('discord-rich-presence')('420530637485637644');
-const lang = require('./lang')
+const Store = require('electron-store');
+const store = new Store();
+const appTitle = store.get('appTitle');
+switch(appTitle){
+    case "itunes":{
+        var clientId = "420530637485637644";
+        break;
+    }
+    case "applemusic":{
+        var clientId = "506922379809783814";
+    }
+}
+const client = require('discord-rich-presence')(clientId);
+const lang = require('./lang');
 exports = module.exports = {};
 const Store = require('electron-store');
 const store = new Store();
@@ -11,7 +23,7 @@ exports.setStatus = function(currentTrack){
             const presence = {
                 details: composeLine1(currentTrack),
                 state: composeLine2(currentTrack),
-                largeImageKey: 'itunes_large',
+                largeImageKey: 'appicon',
                 smallImageKey: 'playing',
                 startTimestamp: time,
                 endTimestamp: new Date(time.getTime() + (currentTrack.remainingTime * 1000)),
@@ -25,7 +37,7 @@ exports.setStatus = function(currentTrack){
             const presence = {
                 details: composeLine1(currentTrack),
                 state: composeLine2(currentTrack),
-                largeImageKey: 'itunes_large',
+                largeImageKey: 'appicon',
                 smallImageKey: 'paused',
                 instance: false
             };
@@ -40,8 +52,6 @@ exports.setStatus = function(currentTrack){
         }
     }
 };
-
-
 
 exports.disconnectRpc = function() {
     client.disconnect();

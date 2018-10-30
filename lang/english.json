@@ -2,7 +2,7 @@
   "preferences": "Preferences",
   "listeningto": "Listening to",
   "language": "Language",
-  "langAlert": "Changing language requires to restart iTunes⇄Discord",
+  "restartAlert": "You need to restart iTunes⇄Discord to apply that configuration",
   "relaunch": "Relaunch",
   "paused": "Paused",
   "by": "by",

@@ -9,7 +9,7 @@ body{
     box-shadow: 2px 2px 40px -12px gray;
     margin-bottom: 20px;
 }
-#lang-alert{
+#restart-alert{
     display: none;
 }
 #about{
