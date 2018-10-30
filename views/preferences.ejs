@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="container">
-    <div class="alert alert-danger" id="lang-alert"><%= lang.langAlert %> <br><button class="btn btn-primary btm-sm"><%= lang.relaunch %></button></div>
+    <div class="alert alert-danger" id="restart-alert"><%= lang.restartAlert %> <br><button class="btn btn-primary btm-sm"><%= lang.relaunch %></button></div>
     <div class="section" id="preferences">
     <h1 class="title"><%= lang.preferences %></h1>
         <form>
@@ -33,6 +33,19 @@
                 <input type="checkbox" class="form-check-input" onchange="checkbox('launch-at-login', 'launchAtLogin')" id="launchAtLogin">
                 <label class="form-check-label" for="launchAtLogin"><%= lang.launchatlogin %>?</label>
             </div>
+            <label class="form-check-label">Titre de l'application (affiché dans Discord)</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" onclick="radio(this)" id="appTitleiTunes" name="appTitle" <% if(appTitle === "itunes"){%>checked<%}%> value="itunes">
+                <label class="form-check-label" for="appTitleiTunes">
+                    iTunes
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" onclick="radio(this)" id="appTitleAppleMusic" name="appTitle" <% if(appTitle === "applemusic"){%>checked<%}%> value="applemusic">
+                <label class="form-check-label" for="appTitleAppleMusic">
+                    Apple Music
+                </label>
+            </div>
         </form>
         </div>
     <div class="section" id="about">
@@ -48,7 +61,7 @@
     document.getElementById('launchAtLogin').checked = <%= launchAtLogin %>;
     var currentLang = "<%= currentLang %>";
     document.getElementById('language').value = currentLang;
-
+    var appTitle = "<%= appTitle %>";
 </script>
 
 </body>

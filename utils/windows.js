@@ -18,7 +18,7 @@ ejse.data('lang', lang.get);
 ejse.data('version', app.getVersion());
 ejse.data('currentLang', store.get('language'));
 ejse.data('launchAtLogin', store.get('launch-at-login'));
-console.log(app.getVersion());
+ejse.data('appTitle', store.get('appTitle'));
 
 exports.showPreferences = function() {
         preferencesWindow = new BrowserWindow({width: 520, height: 671, minWidth: 520, minHeight: 671, fullscreenable: false, titleBarStyle: "hiddenInset", vibrancy: "medium-light", transparent: true});
@@ -28,5 +28,4 @@ exports.showPreferences = function() {
             slashes: true
         }));
         preferencesWindow.setMenu(null);
-    //preferencesWindow.webContents.openDevTools();
 };
