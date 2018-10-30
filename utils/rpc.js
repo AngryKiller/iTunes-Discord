@@ -52,7 +52,7 @@ const composeLine1 = function(currentTrack) {
 
     return line1 != null
         ? replacePartsInLine(line1, currentTrack)
-        : `▶ ${lang.get.listeningto} ${currentTrack.name} ${lang.get.by} ${currentTrack.artist}`;
+        : `🎵 ${lang.get.listeningto} ${currentTrack.name} ${lang.get.by} ${currentTrack.artist}`;
 }
 
 const composeLine2 = function(currentTrack) {
