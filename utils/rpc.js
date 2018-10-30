@@ -1,7 +1,8 @@
 const client = require('discord-rich-presence')('420530637485637644');
 const lang = require('./lang')
 exports = module.exports = {};
-
+const Store = require('electron-store');
+const store = new Store();
 
 exports.setStatus = function(currentTrack){
     switch (currentTrack.playerState) {
@@ -47,15 +48,17 @@ exports.disconnectRpc = function() {
 };
 
 const composeLine1 = function(currentTrack) {
-    const line1 = '%song%'; // how to get from config.json?
-    return line1.length
+    const line1 = store.get('line-1');
+
+    return line1 != null
         ? replacePartsInLine(line1, currentTrack)
         : `▶ ${lang.get.listeningto} ${currentTrack.name} ${lang.get.by} ${currentTrack.artist}`;
 }
 
 const composeLine2 = function(currentTrack) {
-    const line2 = 'by %artist% on %album%'; // how to get from config.json?
-    return line2.length
+    const line2 = store.get('line-2');
+
+    return line2 != null
         ? replacePartsInLine(line2, currentTrack)
         : `💿 ${currentTrack.album}`;
 }
