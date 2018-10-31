@@ -33,7 +33,7 @@
                 <input type="checkbox" class="form-check-input" onchange="checkbox('launch-at-login', 'launchAtLogin')" id="launchAtLogin">
                 <label class="form-check-label" for="launchAtLogin"><%= lang.launchatlogin %>?</label>
             </div>
-            <label class="form-check-label">Titre de l'application (affiché dans Discord)</label>
+            <label class="form-check-label"><%= lang.apptitledesc %></label>
             <div class="form-check">
                 <input class="form-check-input" type="radio" onclick="radio(this)" id="appTitleiTunes" name="appTitle" <% if(appTitle === "itunes"){%>checked<%}%> value="itunes">
                 <label class="form-check-label" for="appTitleiTunes">

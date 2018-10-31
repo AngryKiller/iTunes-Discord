@@ -10,5 +10,6 @@
   "madeby": "Développé par",
   "itunesnotplaying": "iTunes est à l'arrêt...",
   "quit": "Quitter",
-  "launchatlogin": "Ouvrir à l'ouverture de session"
+  "launchatlogin": "Ouvrir à l'ouverture de session",
+  "apptitledesc": "Titre de l'application (affiché dans Discord)"
 }

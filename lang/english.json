@@ -10,5 +10,6 @@
   "madeby": "Made by",
   "itunesnotplaying": "iTunes is not playing...",
   "quit": "Quit",
-  "launchatlogin": "Launch at login"
+  "launchatlogin": "Launch at login",
+  "apptitledesc": "Application title (the one shown in Discord)"
 }
