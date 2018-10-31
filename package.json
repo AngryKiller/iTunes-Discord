@@ -30,16 +30,17 @@
     "discord-rich-presence": "0.0.7",
     "ejs-electron": "^2.0.3",
     "electron-store": "^2.0.0",
-    "electron-updater": "^3.1.1",
+    "electron-updater": "^3.1.6",
     "hazardous": "^0.3.0",
     "itunes-bridge": "github:AngryKiller/itunes-bridge",
     "open": "0.0.5",
     "path": "^0.12.7",
+    "register-scheme": "0.0.2",
     "url": "^0.11.0"
   },
   "devDependencies": {
     "electron": "2.0.12",
-    "electron-builder": "^20.26.1"
+    "electron-builder": "^20.29.0"
   },
   "build": {
     "appId": "fr.angrykiller.itunes-discord",
