@@ -11,5 +11,9 @@
   "itunesnotplaying": "iTunes est à l'arrêt...",
   "quit": "Quitter",
   "launchatlogin": "Ouvrir à l'ouverture de session",
-  "apptitledesc": "Titre de l'application (affiché dans Discord)"
+  "apptitledesc": "Titre de l'application (affiché dans Discord)",
+  "layoutdesc": "Personnaliser le texte affiché sur le profil",
+  "line": "Ligne",
+  "layoutadvice": "Vous pouvez ajouter du texte comme bon vous semble, et les émojis sont supportés 💥🔥",
+  "apply": "Appliquer"
 }

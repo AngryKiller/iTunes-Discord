@@ -11,5 +11,9 @@
   "itunesnotplaying": "iTunes is not playing...",
   "quit": "Quit",
   "launchatlogin": "Launch at login",
-  "apptitledesc": "Application title (the one shown in Discord)"
+  "apptitledesc": "Application title (the one shown in Discord)",
+  "layoutdesc": "Customize the text shown on the profile",
+  "line": "Line",
+  "layoutadvice": "You can add text as you like, and emojis are supported 💥🔥",
+  "apply": "Apply"
 }

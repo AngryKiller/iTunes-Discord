@@ -29,10 +29,12 @@
                     <% }) %>
                 </select>
             </div>
+            <hr>
             <div class="form-group form-check">
                 <input type="checkbox" class="form-check-input" onchange="checkbox('launch-at-login', 'launchAtLogin')" id="launchAtLogin">
                 <label class="form-check-label" for="launchAtLogin"><%= lang.launchatlogin %>?</label>
             </div>
+            <hr>
             <label class="form-check-label"><%= lang.apptitledesc %></label>
             <div class="form-check">
                 <input class="form-check-input" type="radio" onclick="radio(this)" id="appTitleiTunes" name="appTitle" <% if(appTitle === "itunes"){%>checked<%}%> value="itunes">
@@ -45,6 +47,21 @@
                 <label class="form-check-label" for="appTitleAppleMusic">
                     <img src="../assets/img/applemusic.png" width="30"> Apple Music
                 </label>
+            </div>
+
+            <hr>
+            <label><%= lang.layoutdesc %></label>
+            <div class="form-group">
+                <label for="layout-line1"><%= lang.line %> 1</label>
+                <input type="text" class="form-control" id="layout-line1" placeholder="Ex: %song% by %artist%" value="<%=line1%>">
+            </div>
+            <div class="form-group">
+                <label for="layout-line2"><%= lang.line %> 2</label>
+                <input type="text" class="form-control" id="layout-line2" placeholder="Ex: 💿 : %album%" value="<%=line2%>">
+            </div>
+            <small>Vous pouvez ajouter du texte comme bon vous semble, et les émojis sont supportés 💥🔥</small>
+            <div class="form-group">
+                <a class="btn btn-primary" href="#" onclick="changeLines()"><%= lang.apply %></a>
             </div>
         </form>
         </div>

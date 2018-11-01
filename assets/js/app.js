@@ -1,4 +1,5 @@
 const ipc = require('electron').ipcRenderer;
+
 function checkbox(parameter, id){
     if(document.getElementById(id).checked) {
         ipc.send(parameter, true);
@@ -22,4 +23,13 @@ function changeLanguage(){
 }
 function openLink(link){
     ipc.send("link", link);
+}
+
+function changeLines(){
+    var line1 = document.getElementById("layout-line1").value;
+    var line2 = document.getElementById("layout-line2").value;
+    var message = {1: line1, 2: line2};
+    ipc.send("line", message);
+    var alert = document.getElementById("restart-alert");
+    alert.style.display = "block";
 }

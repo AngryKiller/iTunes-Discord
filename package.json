@@ -29,6 +29,7 @@
   "dependencies": {
     "discord-rich-presence": "0.0.7",
     "ejs-electron": "^2.0.3",
+    "electron-is-dev": "^0.3.0",
     "electron-store": "^2.0.0",
     "electron-updater": "^3.1.6",
     "hazardous": "^0.3.0",
