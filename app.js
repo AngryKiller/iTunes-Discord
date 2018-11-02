@@ -5,6 +5,5 @@
 */
 require('./utils/settings');
 require('./utils/interface');
-require('./utils/rpc');
 require('./utils/iTunesEvents');
 

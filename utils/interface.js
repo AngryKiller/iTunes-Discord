@@ -1,5 +1,5 @@
 const {app} = require('electron');
-//app.dock.hide();
+app.dock.hide();
 const tray = require('./tray');
 const rpc = require('./rpc');
 

@@ -1,10 +1,15 @@
 const iTunes = require('itunes-bridge');
-const rpc = require('./rpc');
 const tray = require('./tray');
 const iTunesEmitter = iTunes.emitter;
+const rpc = require('./rpc');
 
+let wasStopped = false;
 
 iTunesEmitter.on('playing', function(type, currentTrack){
+    if(wasStopped === true){
+        rpc.reconnect();
+        wasStopped = false;
+    }
     // If it is a paused track that restarts playing
     if(type === "player_state_change") {
         console.log(currentTrack.name + " has been resumed! ");
@@ -28,4 +33,5 @@ iTunesEmitter.on('stopped', function(){
     console.log("iTunes is not longer playing!");
     tray.update({playerState: "stopped"});
     rpc.setStatus({playerState: "stopped"});
+    wasStopped = true;
 });

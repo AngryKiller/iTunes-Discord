@@ -14,6 +14,11 @@ const client = require('discord-rich-presence')(clientId);
 const lang = require('./lang');
 exports = module.exports = {};
 
+
+exports.reconnect = function(){
+    client.reconnect();
+};
+
 exports.setStatus = function(currentTrack){
     switch (currentTrack.playerState) {
         case "playing": {
