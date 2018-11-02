@@ -7,6 +7,7 @@ const Store = require('electron-store');
 const store = new Store();
 var exports = module.exports = {};
 const views = path.join(__dirname, '../views');
+
 let willQuitApp = false;
 let preferencesWindow;
 
@@ -34,7 +35,8 @@ exports.showPreferences = function() {
         fullscreenable: false,
         titleBarStyle: "hiddenInset",
         vibrancy: "medium-light",
-        transparent: true
+        transparent: true,
+        show: false
     });
     preferencesWindow.loadURL(url.format({
         pathname: path.join(views, 'preferences.ejs'),
@@ -42,6 +44,11 @@ exports.showPreferences = function() {
         slashes: true
     }));
     preferencesWindow.setMenu(null);
+
+
+    preferencesWindow.once('ready-to-show', () => {
+        preferencesWindow.show()
+    });
 
     preferencesWindow.on('close', (e) => {
         if (willQuitApp) {
