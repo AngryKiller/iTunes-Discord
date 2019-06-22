@@ -14,6 +14,6 @@
   "apptitledesc": "Application title (the one shown in Discord)",
   "layoutdesc": "Customize the text shown on the profile",
   "line": "Line",
-  "layoutadvice": "You can add text as you like, and emojis are supported 💥🔥",
+  "layoutadvice": "You can add text as you like, and emojis are supported 💥🔥 . Leave the inputs empty to use the default layout",
   "apply": "Apply"
 }

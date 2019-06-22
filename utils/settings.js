@@ -2,7 +2,6 @@ const {ipcMain, app, shell} = require('electron');
 const Store = require('electron-store');
 const defaultConfig = {"launch-at-login": true, "language": "english", "appTitle": "itunes", "line-1": null, "line-2": null};
 const store = new Store({defaults: defaultConfig});
-const open = require('open');
 const isDev = require('electron-is-dev');
 
 ipcMain.on('launch-at-login', (event, arg) => {
@@ -24,8 +23,16 @@ ipcMain.on('appTitle', (event, arg) => {
 });
 ipcMain.on('line', (event, arg) => {
     console.log('IPC message received! editing lines.');
-    store.set('line-1', arg[1]);
-    store.set('line-2', arg[2]);
+    if(arg[1]) {
+        store.set('line-1', arg[1]);
+    }else{
+        store.set('line-1', null);
+    }
+    if(arg[2]) {
+        store.set('line-1', arg[2]);
+    }else{
+        store.set('line-1', null);
+    }
 });
 ipcMain.on('link', (event, arg) => {
     shell.openExternal(arg);

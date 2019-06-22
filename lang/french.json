@@ -14,6 +14,6 @@
   "apptitledesc": "Titre de l'application (affiché dans Discord)",
   "layoutdesc": "Personnaliser le texte affiché sur le profil",
   "line": "Ligne",
-  "layoutadvice": "Vous pouvez ajouter du texte comme bon vous semble, et les émojis sont supportés 💥🔥",
+  "layoutadvice": "Vous pouvez ajouter du texte comme bon vous semble, et les émojis sont supportés 💥🔥 . Laissez les champs libres pour utiliser la disposition par défaut",
   "apply": "Appliquer"
 }

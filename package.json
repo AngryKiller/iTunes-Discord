@@ -40,7 +40,7 @@
     "url": "^0.11.0"
   },
   "devDependencies": {
-    "electron": "2.0.12",
+    "electron": "5.0.5",
     "electron-builder": "^20.44.4"
   },
   "build": {
