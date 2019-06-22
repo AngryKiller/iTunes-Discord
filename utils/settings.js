@@ -1,4 +1,4 @@
-const {ipcMain, app} = require('electron');
+const {ipcMain, app, shell} = require('electron');
 const Store = require('electron-store');
 const defaultConfig = {"launch-at-login": true, "language": "english", "appTitle": "itunes", "line-1": null, "line-2": null};
 const store = new Store({defaults: defaultConfig});
@@ -28,7 +28,7 @@ ipcMain.on('line', (event, arg) => {
     store.set('line-2', arg[2]);
 });
 ipcMain.on('link', (event, arg) => {
-    open(arg);
+    shell.openExternal(arg);
 });
 
 console.log("settings.js loaded");
