@@ -15,5 +15,10 @@
   "layoutdesc": "Personnaliser le texte affiché sur le profil",
   "line": "Ligne",
   "layoutadvice": "Vous pouvez ajouter du texte comme bon vous semble, et les émojis sont supportés 💥🔥 . Laissez les champs libres pour utiliser la disposition par défaut",
-  "apply": "Appliquer"
+  "apply": "Appliquer",
+  "error": "Erreur",
+  "notfoundindb": "Cette chanson n'a pas été trouvée dans la base de données Apple Music",
+  "success": "Succès",
+  "copiedinclipboard": "Le lien pour cette chanson a été copié dans le presse-papiers",
+  "sharesong": "Partager cette chanson"
 }

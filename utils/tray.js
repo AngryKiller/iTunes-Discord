@@ -4,6 +4,7 @@ const trayIcon = path.join(__dirname, '../assets/img/icon@2x.png');
 const nImage = nativeImage.createFromPath(trayIcon);
 const windows = require('./windows');
 const lang = require('./lang');
+const shareTrack = require('./shareTrack');
 var exports = module.exports = {};
 
 // The tray that will be shown on launch in the status bar
@@ -39,6 +40,7 @@ exports.create = function() {
 exports.update = function(currentTrack) {
     const contextMenu = Menu.buildFromTemplate([
         buildMusicLabel(currentTrack),
+        {label: lang.get.sharesong, type: 'normal', click() {shareTrack.getShareLink()}},
         {type: 'separator'},
         {label: lang.get.preferences, type: 'normal', click() { windows.showPreferences() }},
         {type: 'separator'},

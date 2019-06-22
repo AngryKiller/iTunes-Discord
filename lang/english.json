@@ -15,5 +15,10 @@
   "layoutdesc": "Customize the text shown on the profile",
   "line": "Line",
   "layoutadvice": "You can add text as you like, and emojis are supported 💥🔥 . Leave the inputs empty to use the default layout",
-  "apply": "Apply"
+  "apply": "Apply",
+  "error": "Error",
+  "notfoundindb": "This song could not be found in the Apple Music database",
+  "success": "Success",
+  "copiedinclipboard": "The link for this song has been copied in the clipboard",
+  "sharesong": "Share this song"
 }
