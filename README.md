@@ -1,7 +1,7 @@
 # iTunes⇄Discord
 An app for macOS and Windows to automatically set the activity on Discord to the currently played music on iTunes
 
-#### This app is not finished so I don't recommend you to use it for the moment
+
 
 # How to run it ?
 You need NodeJS 8.0.0+ (older versions untested), macOS 10.10+/Windows 7+ and Electron to use it. Just install the dependencies and... run it!
