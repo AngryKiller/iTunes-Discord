@@ -22,6 +22,7 @@ iTunesEmitter.on('playing', function(type, currentTrack){
         rpc.setStatus(currentTrack);
     }
 });
+
 // Do something when iTunes is paused
 iTunesEmitter.on('paused', function(type, currentTrack){
     console.log(currentTrack.name+" is now paused!");
