@@ -1,7 +1,5 @@
 const {Tray, nativeImage, Menu} = require('electron');
 const path = require('path');
-const trayIcon = path.join(__dirname, '../assets/img/icon@2x.png');
-const nImage = nativeImage.createFromPath(trayIcon);
 const windows = require('./windows');
 const lang = require('./lang');
 const shareTrack = require('./shareTrack');
@@ -32,9 +30,21 @@ function buildMusicLabel(currentTrack){
 
 
 exports.create = function() {
-    tray = new Tray(nImage);
-    tray.setToolTip('iTunes⇄Discord');
-    return tray;
+    // Choosing a different tray icon depending on the OS
+    if(process.platform === "darwin"){
+        const trayIcon = path.join(__dirname, '../assets/img/icon@2x.png');
+        const nImage = nativeImage.createFromPath(trayIcon);
+        tray = new Tray(nImage);
+        tray.setToolTip('iTunes⇄Discord');
+        return tray;
+    }
+    else{
+        const trayIcon = path.join(__dirname, '../assets/img/icon.ico');
+        const nImage = nativeImage.createFromPath(trayIcon);
+        tray = new Tray(nImage);
+        tray.setToolTip('iTunes⇄Discord');
+        return tray;
+    }
 };
 
 exports.update = function(currentTrack) {
