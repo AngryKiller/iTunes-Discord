@@ -48,7 +48,9 @@ exports.create = function() {
 };
 
 exports.update = function(currentTrack) {
-    const contextMenu = Menu.buildFromTemplate([
+    var contextMenu;
+    if(currentTrack.playerState !== "stopped"){
+        contextMenu = Menu.buildFromTemplate([
         buildMusicLabel(currentTrack),
         {label: lang.get.sharesong, type: 'normal', click() {shareTrack.getShareLink()}},
         {type: 'separator'},
@@ -56,6 +58,15 @@ exports.update = function(currentTrack) {
         {type: 'separator'},
         {label: lang.get.quit, type: 'normal', role: 'quit'}
     ]);
-        tray.setContextMenu(contextMenu);
-        console.log("Tray information updated!")
+    }else{
+        contextMenu = Menu.buildFromTemplate([
+            buildMusicLabel(currentTrack),
+            {type: 'separator'},
+            {label: lang.get.preferences, type: 'normal', click() { windows.showPreferences() }},
+            {type: 'separator'},
+            {label: lang.get.quit, type: 'normal', role: 'quit'}
+        ]);
+    }
+    tray.setContextMenu(contextMenu);
+    console.log("Tray information updated!")
 };
