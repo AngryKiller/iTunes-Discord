@@ -32,7 +32,7 @@ function buildMusicLabel(currentTrack){
 exports.create = function() {
     // Choosing a different tray icon depending on the OS
     if(process.platform === "darwin"){
-        const trayIcon = path.join(__dirname, '../assets/img/icon@2x.png');
+        const trayIcon = path.join(__dirname, '../assets/img/IconTemplate@2x.png');
         const nImage = nativeImage.createFromPath(trayIcon);
         tray = new Tray(nImage);
         tray.setToolTip('iTunes⇄Discord');
