@@ -5,8 +5,34 @@
     <title><%= lang.preferences %></title>
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <%if(process.platform === 'darwin'){%>
+        <style>
+            .header{
+                height: 38px;
+                width: 100%;
+                position: fixed;
+                background: #f4f4f4;
+                box-shadow: 0px 7px 55px -10px rgba(0,0,0,0.64);
+                margin-bottom: 20px;
+                z-index: 999;
+                opacity: 0;
+                transition: opacity 0.3s;
+            }
+            body{
+                padding: 0;
+            }
+            .show{
+                opacity: 1;
+                transition: opacity 0.3s;
+            }
+            .container{
+                padding-top: 50px;
+            }
+        </style>
+    <%}%>
 </head>
 <body>
+<div class="header" id="header"></div>
 <div class="container">
     <div class="alert alert-danger" id="restart-alert"><%= lang.restartAlert %> <br><button class="btn btn-primary btm-sm"><%= lang.relaunch %></button></div>
     <div class="section" id="preferences">

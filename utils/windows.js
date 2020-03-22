@@ -36,7 +36,8 @@ exports.showPreferences = function() {
         titleBarStyle: "hiddenInset",
         vibrancy: "medium-light",
         transparent: true,
-        show: false
+        show: false,
+        webPreferences: {experimentalFeatures: true, nodeIntegration: true}
     });
     preferencesWindow.loadURL(url.format({
         pathname: path.join(views, 'preferences.ejs'),

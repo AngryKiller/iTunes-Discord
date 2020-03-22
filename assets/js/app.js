@@ -33,3 +33,16 @@ function changeLines(){
     var alert = document.getElementById("restart-alert");
     alert.style.display = "block";
 }
+
+header = document.getElementById("header");
+
+var scrollHeader = function() {
+    var y = window.scrollY;
+    if (y >= 20) {
+        header.className = "header show"
+    } else {
+        header.className = "header"
+    }
+};
+
+window.addEventListener("scroll", scrollHeader);
