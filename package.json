@@ -32,7 +32,7 @@
   },
   "homepage": "https://github.com/AngryKiller/iTunes-Discord#readme",
   "dependencies": {
-    "discord-rich-presence": "github:AngryKiller/discord-rich-presence",
+    "discord-rich-presence": "0.0.8",
     "ejs-electron": "^2.0.3",
     "electron-is-dev": "^0.3.0",
     "electron-store": "^2.0.0",

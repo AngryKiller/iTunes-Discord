@@ -69,3 +69,4 @@ package-lock.json
 dist
 package-lock.json
 *.nosync
+.DS_Store

@@ -10,13 +10,13 @@ switch(appTitle){
         var clientId = "506922379809783814";
     }
 }
-const client = require('discord-rich-presence')(clientId);
+let client = require('discord-rich-presence')(clientId);
 const lang = require('./lang');
 exports = module.exports = {};
 
 
 exports.reconnect = function(){
-    client.reconnect();
+    client = require('discord-rich-presence')(clientId);
 };
 
 exports.setStatus = function(currentTrack){
@@ -57,7 +57,7 @@ exports.setStatus = function(currentTrack){
 };
 
 exports.disconnectRpc = function() {
-    client.disconnect();
+    client.disconnect().catch();
 };
 
 const composeLine1 = function(currentTrack) {
