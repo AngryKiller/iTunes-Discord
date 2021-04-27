@@ -40,7 +40,7 @@
     "get-apple-music-link": "^1.0.0",
     "hazardous": "^0.3.0",
     "itunes-bridge": "github:AngryKiller/itunes-bridge",
-    "node-notifier": "^5.4.0",
+    "node-notifier": "^8.0.1",
     "path": "^0.12.7",
     "register-scheme": "0.0.2",
     "url": "^0.11.0"
